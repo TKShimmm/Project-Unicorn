@@ -4,13 +4,10 @@ import ImgAbout from "../../../assets/images/About_img.svg";
 import AboutUnicorn from "./AboutComponentsContents/About-Unicorn";
 
 const Base = styled.div`
-  /* border: 1px solid black; */
-  width: 1440px;
   margin: 0 auto;
 `;
 
 const Container = styled.div`
-  /* border: 1px solid black; */
   width: 1180px;
   margin: 0 auto;
   position: relative;
@@ -55,8 +52,15 @@ const ContentsSpan = styled.div`
   color: #000000;
 `;
 
+const ImgBackground = styled.div`
+  background-color: #2d59e3;
+  width: 100%;
+`;
+
 const AboutImg = styled.div`
-  /* border: 1px solid black; */
+  width: 1440px;
+  margin: 0 auto;
+  position: relative;
 `;
 
 const AboutContents = () => {
@@ -75,9 +79,11 @@ const AboutContents = () => {
           </ContentsSpan>
         </Contents>
       </Container>
-      <AboutImg>
-        <img src={ImgAbout} alt="About_Image" />
-      </AboutImg>
+      <ImgBackground>
+        <AboutImg>
+          <img src={ImgAbout} alt="About_Image" />
+        </AboutImg>
+      </ImgBackground>
     </Base>
   );
 };

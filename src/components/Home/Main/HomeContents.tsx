@@ -5,22 +5,14 @@ import { useNavigate } from "react-router-dom";
 
 const Base = styled.div`
   background: #4a73f3;
-  width: 100vw;
+`;
+
+const Inner = styled.div`
+  width: 1440px;
   height: 670px;
   margin: 0 auto;
   position: relative;
-  @media (max-width: 1300px) {
-    width: 1440px;
-  }
-`;
-
-const Container = styled.div`
-  /* background: pink; */
-  width: 80%;
-  height: 100%;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
+  padding: 130px;
 `;
 
 const SpanA = styled.span`
@@ -95,11 +87,12 @@ const HomeContents = (props: any) => {
   const authToken = sessionStorage.getItem("Auth Token");
   return (
     <Base>
-      <Container>
+      <Inner>
         <SpanA>당신의 유니콘은 어디쯤입니까?</SpanA>
         <SpanB>
+          {" "}
           내 사업이 잘 되고 있는지 확인하고 싶다면, 유니콘 판별기를
-          사용해보세요.
+          사용해보세요.{" "}
         </SpanB>
         <Btn
           onClick={() => {
@@ -135,7 +128,7 @@ const HomeContents = (props: any) => {
             }}
           />
         </MainImg>
-      </Container>
+      </Inner>
     </Base>
   );
 };

@@ -11,16 +11,17 @@ import { useNavigate } from "react-router-dom";
 
 const Base = styled.div`
   border: 1px solid black;
-  // width: 1440px;
-  width: 100vw;
-  height: 2462px;
-  margin: 0 auto;
   background: #07145a;
+`;
+
+const Inner = styled.div`
   position: relative;
+  width: 100vw;
+  height: 2630px;
+  margin: 0 auto;
 `;
 
 const Header = styled.div`
-  /* border: 1px solid black; */
   margin: 0 auto;
   width: 1180px;
   background: #07145a;
@@ -40,8 +41,6 @@ const SpanInfo = styled.div`
   top: 83px;
 `;
 const Btn = styled.div`
-  // position: absolute;
-  // left: 130px;
   background: #4a73f3;
   color: #fff;
   width: 360px;
@@ -58,7 +57,10 @@ const Btn = styled.div`
   }
 `;
 
-const Main = styled.div``;
+const Main = styled.div`
+  margin-left: 534px;
+  position: relative;
+`;
 const InfoContainer = styled.div``;
 const SpanContainer = styled.div`
   position: absolute;
@@ -119,96 +121,99 @@ function HomeScrollHow() {
   return (
     <>
       <Base>
-        <Header>
-          <SpanTitle>어떻게 사용하나요?</SpanTitle>
-          <SpanInfo>
-            CSV 파일 업로드 및 간단한 정보입력으로 인사이트를 얻어보세요!
-          </SpanInfo>
-          <Btn onClick={goToLtv}>유니콘 판별기 사용하기</Btn>
-        </Header>
-        <Main>
-          <InfoContainer>
-            <ImgScroll1
-              style={{
-                position: "absolute",
-                left: "708px",
-                top: "259px",
-                overflow: "hidden",
-              }}
-            />
-            <SpanContainer style={{ top: "658px" }}>
-              <img
-                src={IconScroll_1}
-                alt=""
+        <Inner>
+          <Header>
+            <SpanTitle>어떻게 사용하나요?</SpanTitle>
+            <SpanInfo>
+              CSV 파일 업로드 및 간단한 정보입력으로 인사이트를 얻어보세요!
+            </SpanInfo>
+            <Btn onClick={goToLtv}>유니콘 판별기 사용하기</Btn>
+          </Header>
+          <Main>
+            <InfoContainer>
+              <ImgScroll1
                 style={{
                   position: "absolute",
-                  height: "80px",
-                  marginTop: "-2%",
-                  marginLeft: "-27%",
-                  zIndex: "1",
+                  left: "708px",
+                  top: "259px",
+                  overflow: "hidden",
                 }}
               />
-              <HowSpanTitle>CSV 파일 업로드</HowSpanTitle>
-              <HowSpanText>
-                {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit */}
-                사용자 데이터를 담은 CSV 파일을 업로드 해주세요.
-              </HowSpanText>
-            </SpanContainer>
-          </InfoContainer>
-          <InfoContainer>
-            <ImgScroll2
-              style={{
-                position: "absolute",
-                height: "618.98px",
-                left: "708px",
-                top: "1051px",
-              }}
-            />
-            <SpanContainer style={{ top: "1433px" }}>
-              <img
-                src={IconScroll_2}
-                alt=""
+              <SpanContainer style={{ top: "658px" }}>
+                <img
+                  src={IconScroll_1}
+                  alt=""
+                  style={{
+                    position: "absolute",
+                    height: "80px",
+                    marginTop: "-2%",
+                    marginLeft: "-27%",
+                    zIndex: "1",
+                  }}
+                />
+                <HowSpanTitle>CSV 파일 업로드</HowSpanTitle>
+                <HowSpanText>
+                  {" "}
+                  사용자 데이터를 담은 CSV 파일을 업로드 해주세요.{" "}
+                </HowSpanText>
+              </SpanContainer>
+            </InfoContainer>
+            <InfoContainer>
+              <ImgScroll2
                 style={{
                   position: "absolute",
-                  height: "80px",
-                  marginTop: "-3%",
-                  marginLeft: "-36%",
-                  zIndex: "1",
+                  height: "618.98px",
+                  left: "708px",
+                  top: "1051px",
                 }}
               />
-              <HowSpanTitle>기본 정보 입력</HowSpanTitle>
-              <HowSpanText>서비스 명, URL등 정보를 입력해주세요.</HowSpanText>
-            </SpanContainer>
-          </InfoContainer>
-          <InfoContainer>
-            <ImgScroll3
-              style={{
-                position: "absolute",
-                height: "618.98px",
-                left: "708px",
-                top: "1843px",
-              }}
-            />
-            <SpanContainer style={{ top: "2236px" }}>
-              <img
-                src={IconScroll_3}
-                alt=""
+              <SpanContainer style={{ top: "1433px" }}>
+                <img
+                  src={IconScroll_2}
+                  alt=""
+                  style={{
+                    position: "absolute",
+                    height: "80px",
+                    marginTop: "-3%",
+                    marginLeft: "-36%",
+                    zIndex: "1",
+                  }}
+                />
+                <HowSpanTitle>기본 정보 입력</HowSpanTitle>
+                <HowSpanText>서비스 명, URL등 정보를 입력해주세요.</HowSpanText>
+              </SpanContainer>
+            </InfoContainer>
+            <InfoContainer>
+              <ImgScroll3
                 style={{
                   position: "absolute",
-                  height: "80px",
-                  marginTop: "-2%",
-                  marginLeft: "-30%",
-                  zIndex: "1",
+                  height: "618.98px",
+                  left: "708px",
+                  top: "1843px",
                 }}
               />
-              <HowSpanTitle>LTV 결과 확인</HowSpanTitle>
-              <HowSpanText>
-                결과를 확인하고, 성장의 발판으로 삼아보세요.
-              </HowSpanText>
-            </SpanContainer>
-          </InfoContainer>
-          <Bar />
-        </Main>
+              <SpanContainer style={{ top: "2236px" }}>
+                <img
+                  src={IconScroll_3}
+                  alt=""
+                  style={{
+                    position: "absolute",
+                    height: "80px",
+                    marginTop: "-2%",
+                    marginLeft: "-30%",
+                    zIndex: "1",
+                  }}
+                />
+                <HowSpanTitle>LTV 결과 확인</HowSpanTitle>
+                <HowSpanText>
+                  {" "}
+                  결과를 확인하고, 성장의 발판으로 삼아보세요.{" "}
+                </HowSpanText>
+              </SpanContainer>
+            </InfoContainer>
+            <Bar />
+          </Main>
+        </Inner>
       </Base>
     </>
   );

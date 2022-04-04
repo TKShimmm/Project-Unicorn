@@ -14,11 +14,15 @@ interface inputProps {
 const Base = styled.div`
   /* border: 1px solid black; */
   background: #fafafa;
+`;
+
+const Inner = styled.div`
+  background: #fafafa;
   width: 1440px;
   height: 690px;
   margin: 0 auto;
   position: relative;
-`;
+`
 
 const Container = styled.div`
   /* border: 1px solid black; */
@@ -171,6 +175,7 @@ const InputBtn = styled.div`
 const AboutContents = () => {
   return (
     <Base>
+    <Inner>
       <Container>
         <Nav>
           <NavContents>유니콘이란?</NavContents>
@@ -224,6 +229,7 @@ const AboutContents = () => {
       <ImgContact>
         <img src={ContactImg} alt="About_Contact_Image" />
       </ImgContact>
+      </Inner>
     </Base>
   );
 };

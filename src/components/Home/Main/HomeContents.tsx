@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const Base = styled.div`
   background: #4a73f3;
+  width: 100%;
 `;
 
 const Inner = styled.div`
@@ -54,8 +55,9 @@ const Btn = styled.div`
 const MainImg = styled.div`
   /* border: 1px solid black; */
   position: absolute;
-  right: -145px;
+  left: 755px;
   top: 0px;
+  overflow: hidden;
 `;
 
 const SubInfo = styled.div`

@@ -3,15 +3,13 @@ import styled from "styled-components";
 import LogoFooter from "../../../assets/icons/logo2.svg";
 
 const Container = styled.div`
-  width: 100vw;
-  /* height: 120px; */
   margin: 0 auto;
   background-color: #f5f5f5;
   `;
 
 const Inner = styled.div`
   height: 120px;
-  width: 80%;
+  width: 1440px;
   margin: 0 auto;
   position: relative;
 `

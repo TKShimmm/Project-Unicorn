@@ -10,41 +10,40 @@ import IconScroll_3 from "../../../../assets/icons/Icon-Scroll-3.svg";
 import { useNavigate } from "react-router-dom";
 
 const Base = styled.div`
-  border: 1px solid black;
-  background: #07145a;
+  /* background-color: #07145a; */
 `;
 
 const Inner = styled.div`
-  position: relative;
-  width: 100vw;
-  height: 2630px;
+  width: 1440px;
+  height: 2464px;
   margin: 0 auto;
+  background-color: #07145a;
 `;
 
 const Header = styled.div`
-  margin: 0 auto;
-  width: 1180px;
-  background: #07145a;
+  padding-top: 50px;
+  margin: 0 130px;
 `;
+
 const SpanTitle = styled.div`
-  font-weight: 400;
   font-size: 30px;
+  font-weight: 400;
   line-height: 40px;
   color: #e5e5e5;
-  margin-top: 50px;
 `;
 const SpanInfo = styled.div`
-  font-weight: 700;
   font-size: 25px;
+  font-weight: 700;
   line-height: 55px;
   color: #4a73f3;
-  top: 83px;
 `;
-const Btn = styled.div`
+
+const UnicornBtn = styled.div`
+  left: 140px;
   background: #4a73f3;
   color: #fff;
   width: 360px;
-  margin-top: 20px;
+  top: 281px;
   display: block;
   border-radius: 10px;
   text-align: center;
@@ -52,54 +51,69 @@ const Btn = styled.div`
   font-size: 20px;
   font-weight: 700;
   top: 152px;
+  z-index: 1;
   &:hover {
     cursor: pointer;
   }
 `;
 
 const Main = styled.div`
-  margin-left: 534px;
+  width: 1440px;
+  margin: 0 auto;
   position: relative;
 `;
-const InfoContainer = styled.div``;
-const SpanContainer = styled.div`
+const InfoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 125px;
   position: absolute;
-  height: 30px;
-  left: 230px;
+  z-index: 1;
+`;
+const SpanContainer = styled.div`
+  margin-left: 20px;
 `;
 const HowSpanTitle = styled.div`
-  font-weight: 700;
   font-size: 20px;
-  line-height: 30px;
-  display: flex;
-  // align-items: center;
-  // text-align: center;
-  color: #ffffff;
+  font-weight: 700;
+  line-height: 29.6px;
+  color: #fff;
 `;
 const HowSpanText = styled.div`
-  font-weight: 400;
   font-size: 16px;
-  line-height: 24px;
-  color: #ffffff;
+  font-weight: 400;
+  line-height: 23.68px;
+  color: #fff;
 `;
 
-const ImgScroll1 = styled.div`
+const Img = styled.div`
+  width: 720px;
+  height: 618.98px;
+  position: absolute;
+  left: 595px;
+  overflow: hidden;
+  top: -384px;
+  `;
+
+const ImgScroll1 = styled.img`
   background-image: url(${ImgScroll_1});
-  background-size: cover;
-  width: 900px;
-  height: 619px;
+  background-repeat: no-repeat;
+  width: 1110px;
+  height: 618.98px;
+  border: none;
 `;
-const ImgScroll2 = styled.div`
+const ImgScroll2 = styled.img`
   background-image: url(${ImgScroll_2});
-  background-size: cover;
-  width: 900px;
-  height: 619px;
+  background-repeat: no-repeat;
+  width: 1110px;
+  height: 618.98px;
+  border: none;
 `;
-const ImgScroll3 = styled.div`
+const ImgScroll3 = styled.img`
   background-image: url(${ImgScroll_3});
-  background-size: cover;
-  width: 900px;
-  height: 619px;
+  background-repeat: no-repeat;
+  width: 1110px;
+  height: 618.98px;
+  border: none;
 `;
 
 const Bar = styled.div`
@@ -107,8 +121,8 @@ const Bar = styled.div`
   width: 2px;
   background-color: #f5f5f5;
   position: absolute;
-  top: 700px;
-  left: 176px;
+  top: 500px;
+  left: 170px;
 `;
 
 function HomeScrollHow() {
@@ -127,30 +141,24 @@ function HomeScrollHow() {
             <SpanInfo>
               CSV 파일 업로드 및 간단한 정보입력으로 인사이트를 얻어보세요!
             </SpanInfo>
-            <Btn onClick={goToLtv}>유니콘 판별기 사용하기</Btn>
+            <UnicornBtn
+              onClick={() => {
+                // eslint-disable-next-line no-lone-blocks
+                {
+                  authToken ? navigate("/term-agree") : navigate("/login");
+                }
+              }}
+            >
+              유니콘 판별기 사용하기
+            </UnicornBtn>
           </Header>
           <Main>
-            <InfoContainer>
-              <ImgScroll1
-                style={{
-                  position: "absolute",
-                  left: "708px",
-                  top: "259px",
-                  overflow: "hidden",
-                }}
-              />
-              <SpanContainer style={{ top: "658px" }}>
-                <img
-                  src={IconScroll_1}
-                  alt=""
-                  style={{
-                    position: "absolute",
-                    height: "80px",
-                    marginTop: "-2%",
-                    marginLeft: "-27%",
-                    zIndex: "1",
-                  }}
-                />
+            <InfoContainer style={{top: "444px"}}>
+              <Img>
+                <ImgScroll1 />
+              </Img>
+              <img src={IconScroll_1} alt="" />
+              <SpanContainer>
                 <HowSpanTitle>CSV 파일 업로드</HowSpanTitle>
                 <HowSpanText>
                   {" "}
@@ -158,52 +166,22 @@ function HomeScrollHow() {
                 </HowSpanText>
               </SpanContainer>
             </InfoContainer>
-            <InfoContainer>
-              <ImgScroll2
-                style={{
-                  position: "absolute",
-                  height: "618.98px",
-                  left: "708px",
-                  top: "1051px",
-                }}
-              />
-              <SpanContainer style={{ top: "1433px" }}>
-                <img
-                  src={IconScroll_2}
-                  alt=""
-                  style={{
-                    position: "absolute",
-                    height: "80px",
-                    marginTop: "-3%",
-                    marginLeft: "-36%",
-                    zIndex: "1",
-                  }}
-                />
+            <InfoContainer style={{ top: "1219px"}}>
+              <Img>
+                <ImgScroll2 />
+              </Img>
+              <img src={IconScroll_2} alt="" />
+              <SpanContainer>
                 <HowSpanTitle>기본 정보 입력</HowSpanTitle>
                 <HowSpanText>서비스 명, URL등 정보를 입력해주세요.</HowSpanText>
               </SpanContainer>
             </InfoContainer>
-            <InfoContainer>
-              <ImgScroll3
-                style={{
-                  position: "absolute",
-                  height: "618.98px",
-                  left: "708px",
-                  top: "1843px",
-                }}
-              />
-              <SpanContainer style={{ top: "2236px" }}>
-                <img
-                  src={IconScroll_3}
-                  alt=""
-                  style={{
-                    position: "absolute",
-                    height: "80px",
-                    marginTop: "-2%",
-                    marginLeft: "-30%",
-                    zIndex: "1",
-                  }}
-                />
+            <InfoContainer style={{top: "2024px"}}>
+              <Img>
+                <ImgScroll3 />
+              </Img>
+              <img src={IconScroll_3} alt="" />
+              <SpanContainer>
                 <HowSpanTitle>LTV 결과 확인</HowSpanTitle>
                 <HowSpanText>
                   {" "}
